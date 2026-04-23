@@ -35,3 +35,7 @@ coverage/
 # Large files
 mongodb-installer.msi
 *.msi
+
+# Large files
+mongodb-installer.msi
+*.msi
