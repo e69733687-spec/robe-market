@@ -1,0 +1,329 @@
+@import "tailwindcss";
+
+:root {
+  --primary-black: #000000;
+  --primary-orange: #ff6600;
+  --primary-white: #ffffff;
+  --neutral-bg: #ffffff;
+  --surface: #ffffff;
+  --surface-strong: #000000;
+  --text-dark: #111111;
+  --text-muted: #4a4a4a;
+  --border-color: #f1e4d8;
+  --shadow: 0 12px 34px rgba(0,0,0,0.14);
+}
+
+/* If you use CSS Modules, you may need @reference for Tailwind v4, but for global styles this is not required. */
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  background-color: var(--neutral-bg);
+  color: var(--text-dark);
+  line-height: 1.6;
+}
+
+.btn-primary {
+  background: var(--primary-orange);
+  color: var(--primary-white);
+  border: none;
+  padding: 12px 24px;
+  border-radius: 9999px;
+  font-weight: 700;
+  transition: all 0.25s ease;
+}
+
+.btn-primary:hover {
+  background: #e65c00;
+  transform: translateY(-1px);
+}
+
+.btn-secondary {
+  background: var(--primary-white);
+  color: var(--primary-orange);
+  border: 2px solid var(--primary-orange);
+  padding: 10px 22px;
+  border-radius: 9999px;
+  font-weight: 600;
+  transition: all 0.25s ease;
+}
+
+.btn-secondary:hover {
+  background: var(--primary-orange);
+  color: var(--primary-white);
+}
+
+/* Global Tailwind utility overrides for Engocha branding */
+.bg-blue-600 { background-color: var(--primary-orange) !important; }
+.hover\:bg-blue-700:hover { background-color: #e65c00 !important; }
+.text-blue-600 { color: var(--primary-orange) !important; }
+.border-blue-600 { border-color: var(--primary-orange) !important; }
+.bg-blue-50 { background-color: rgba(255, 102, 0, 0.08) !important; }
+.bg-blue-100 { background-color: rgba(255, 102, 0, 0.12) !important; }
+.text-blue-700 { color: #cc5200 !important; }
+.focus\:ring-blue-500:focus { box-shadow: 0 0 0 3px rgba(255, 102, 0, 0.3) !important; }
+.from-blue-600 { --tw-gradient-from: var(--primary-orange) !important; }
+.to-blue-600 { --tw-gradient-to: var(--primary-orange) !important; }
+.from-blue-900\/20 { --tw-gradient-from: rgba(0, 0, 0, 0.20) !important; }
+.to-green-900\/20 { --tw-gradient-to: rgba(255, 102, 0, 0.20) !important; }
+.bg-slate-800 { background-color: var(--primary-black) !important; }
+.bg-slate-900 { background-color: var(--primary-black) !important; }
+.text-slate-900 { color: var(--text-dark) !important; }
+.text-gray-900 { color: var(--text-dark) !important; }
+.text-gray-600, .text-slate-600 { color: var(--text-muted) !important; }
+.bg-gray-50 { background-color: #fff6f0 !important; }
+.bg-gray-100 { background-color: #fff1e6 !important; }
+.hover\:bg-gray-200:hover { background-color: #ffe0cc !important; }
+
+/* Icon sizing fixes */
+.icon-xs { width: 16px; height: 16px; }
+.icon-sm { width: 18px; height: 18px; }
+.icon-md { width: 20px; height: 20px; }
+.icon-lg { width: 24px; height: 24px; }
+.icon-xl { width: 32px; height: 32px; }
+.icon-2xl { width: 40px; height: 40px; }
+
+.upload-icon, .form-icon, .phone-icon, .display-icon, svg {
+  max-width: 100%;
+  max-height: 100%;
+}
+
+@media (max-width: 640px) {
+  .icon-responsive { width: 18px; height: 18px; }
+}
+@media (min-width: 641px) {
+  .icon-responsive { width: 22px; height: 22px; }
+}
+
+
+/* Professional icon sizing - responsive and properly sized */
+.icon-xs { width: 16px; height: 16px; }
+.icon-sm { width: 20px; height: 20px; }
+.icon-md { width: 24px; height: 24px; }
+.icon-lg { width: 32px; height: 32px; }
+.icon-xl { width: 48px; height: 48px; }
+.icon-2xl { width: 64px; height: 64px; }
+
+/* Responsive icon sizing */
+@media (max-width: 640px) {
+  .icon-responsive { width: 20px; height: 20px; }
+}
+@media (min-width: 641px) {
+  .icon-responsive { width: 24px; height: 24px; }
+}
+
+/* Upload and form icons - ensure they're not oversized */
+.upload-icon, .form-icon {
+  width: 24px;
+  height: 24px;
+  max-width: 24px;
+  max-height: 24px;
+}
+
+/* Phone/display icons - prevent oversized rendering */
+.phone-icon, .display-icon {
+  width: 24px;
+  height: 24px;
+  object-fit: contain;
+}
+
+/* Professional card styling with Engocha branding */
+.professional-card {
+  background: white;
+  border-radius: 12px;
+  box-shadow: var(--shadow);
+  border: 1px solid var(--border-color);
+  transition: all 0.3s ease;
+}
+
+.professional-card:hover {
+  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+  transform: translateY(-2px);
+}
+
+/* Primary button styling */
+.btn-primary {
+  background: var(--primary-blue);
+  color: white;
+  border: none;
+  padding: 12px 24px;
+  border-radius: 8px;
+  font-weight: 600;
+  transition: all 0.3s ease;
+}
+
+.btn-primary:hover {
+  background: #0052a3;
+  transform: translateY(-1px);
+}
+
+/* Secondary button styling */
+.btn-secondary {
+  background: white;
+  color: var(--primary-blue);
+  border: 2px solid var(--primary-blue);
+  padding: 10px 22px;
+  border-radius: 8px;
+  font-weight: 600;
+  transition: all 0.3s ease;
+}
+
+.btn-secondary:hover {
+  background: var(--primary-blue);
+  color: white;
+}
+
+/* Category card styling */
+.category-card {
+  background: white;
+  border: 1px solid var(--border-color);
+  border-radius: 12px;
+  padding: 20px;
+  text-align: center;
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+.category-card:hover {
+  border-color: var(--primary-blue);
+  box-shadow: 0 4px 12px rgba(0,102,204,0.1);
+}
+
+/* Hero section styling */
+.hero-section {
+  background: linear-gradient(135deg, #0066cc 0%, #00aa44 100%);
+  color: white;
+  position: relative;
+  overflow: hidden;
+}
+
+.hero-section::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><circle cx="20" cy="20" r="2" fill="rgba(255,255,255,0.1)"/><circle cx="80" cy="80" r="2" fill="rgba(255,255,255,0.1)"/><circle cx="60" cy="40" r="1" fill="rgba(255,255,255,0.1)"/></svg>') repeat;
+  opacity: 0.3;
+}
+
+/* Search bar styling */
+.search-container {
+  background: white;
+  border-radius: 50px;
+  padding: 4px;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+  border: 2px solid transparent;
+  transition: all 0.3s ease;
+}
+
+.search-container:focus-within {
+  border-color: var(--primary-blue);
+  box-shadow: 0 4px 25px rgba(0,102,204,0.2);
+}
+
+/* Line clamp utilities */
+.line-clamp-1 {
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 1;
+}
+
+.line-clamp-2 {
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+}
+
+.line-clamp-3 {
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 3;
+}
+
+/* Responsive typography */
+@media (max-width: 640px) {
+  .hero-title {
+    font-size: 2.5rem;
+    line-height: 1.2;
+  }
+  .hero-subtitle {
+    font-size: 1rem;
+    line-height: 1.5;
+  }
+}
+
+@media (min-width: 641px) {
+  .hero-title {
+    font-size: 3.75rem;
+    line-height: 1.1;
+  }
+  .hero-subtitle {
+    font-size: 1.25rem;
+    line-height: 1.6;
+  }
+}
+
+/* Loading states */
+.loading-shimmer {
+  background: linear-gradient(90deg, #f0f0f0 25%, #e0e0e0 50%, #f0f0f0 75%);
+  background-size: 200% 100%;
+  animation: shimmer 1.5s infinite;
+}
+
+@keyframes shimmer {
+  0% { background-position: -200% 0; }
+  100% { background-position: 200% 0; }
+}
+
+/* Ensure images are responsive */
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+/* Form styling */
+.form-input {
+  width: 100%;
+  padding: 12px 16px;
+  border: 2px solid var(--border-color);
+  border-radius: 8px;
+  font-size: 16px;
+  transition: all 0.3s ease;
+}
+
+.form-input:focus {
+  outline: none;
+  border-color: var(--primary-blue);
+  box-shadow: 0 0 0 3px rgba(0,102,204,0.1);
+}
+
+/* Navigation styling */
+.nav-link {
+  color: var(--text-dark);
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.3s ease;
+}
+
+.nav-link:hover {
+  color: var(--primary-blue);
+}
+
+.nav-link.active {
+  color: var(--primary-blue);
+  font-weight: 600;
+}
+
+.line-clamp-3 {
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 3;
+}

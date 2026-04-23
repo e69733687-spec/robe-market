@@ -1,0 +1,53 @@
+{
+  "name": "robe-market",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "dev": "powershell -NoProfile -Command \"try { $p = Get-NetTCPConnection -LocalPort 3000 -ErrorAction Stop | Where-Object { $_.OwningProcess -gt 0 } | Select-Object -Unique OwningProcess; if ($p) { Stop-Process -Id $p.OwningProcess -Force -ErrorAction SilentlyContinue } } catch {}; Remove-Item -Force .next\\dev\\*.lock -ErrorAction SilentlyContinue; node server.mjs\"",
+    "dev:clean": "powershell -NoProfile -Command \"try { $p = Get-NetTCPConnection -LocalPort 3000 -ErrorAction Stop | Where-Object { $_.OwningProcess -gt 0 } | Select-Object -Unique OwningProcess; if ($p) { Stop-Process -Id $p.OwningProcess -Force -ErrorAction SilentlyContinue } } catch {}; Remove-Item -Force .next\\dev\\*.lock -ErrorAction SilentlyContinue\"",
+    "build": "next build",
+    "start": "NODE_ENV=production node server.mjs",
+    "lint": "next lint"
+  },
+  "dependencies": {
+    "@hookform/resolvers": "^5.2.2",
+    "@next-auth/mongodb-adapter": "^1.1.3",
+    "@stripe/stripe-js": "^9.2.0",
+    "@tailwindcss/postcss": "^4.2.2",
+    "autoprefixer": "latest",
+    "axios": "^1.15.0",
+    "bcryptjs": "^2.4.3",
+    "cloudinary": "^2.9.0",
+    "csurf": "^1.11.0",
+    "dotenv": "^16.3.1",
+    "express-rate-limit": "^7.1.5",
+    "firebase": "^12.12.0",
+    "framer-motion": "^12.38.0",
+    "helmet": "^7.0.0",
+    "jsonwebtoken": "^9.0.2",
+    "leaflet": "^1.9.4",
+    "lru-cache": "^5.1.1",
+    "mongodb": "^5.9.2",
+    "mongoose": "^8.13.0",
+    "multer": "^2.1.1",
+    "next": "latest",
+    "next-auth": "^4.24.14",
+    "nodemailer": "^7.0.7",
+    "postcss": "^8.5.10",
+    "react": "latest",
+    "react-dom": "latest",
+    "react-hook-form": "^7.72.1",
+    "react-leaflet": "^4.2.1",
+    "react-player": "^3.4.0",
+    "react-query": "^3.39.3",
+    "sharp": "^0.33.0",
+    "socket.io": "^4.7.4",
+    "socket.io-client": "^4.7.4",
+    "tailwindcss": "latest",
+    "yup": "^1.7.1"
+  },
+  "devDependencies": {
+    "eslint": "^9.39.4",
+    "eslint-config-next": "^16.2.4"
+  }
+}
